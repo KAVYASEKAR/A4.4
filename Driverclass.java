@@ -13,15 +13,15 @@ public class Driverclass {
 	public static void main(String[] args) throws Exception {
 		Configuration conf = new Configuration();
 		Job job = new Job(conf, "DemoTask1");
-		job.setJarByClass(Assign.class);
+		job.setJarByClass(Driverclass.class);
 
 		job.setMapOutputKeyClass(Text.class);
 		job.setMapOutputValueClass(IntWritable.class);
 
 		job.setOutputKeyClass(Text.class);
 		job.setOutputValueClass(IntWritable.class);
-		job.setMapperClass(AssignMapper.class);
-		job.setReducerClass(AssignReducer.class);
+		job.setMapperClass(Mapperclass.class);
+		job.setReducerClass(Reducerclass.class);
 		
 		 
 		job.setInputFormatClass(TextInputFormat.class);
